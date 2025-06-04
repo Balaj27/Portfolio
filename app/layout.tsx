@@ -4,7 +4,17 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Portfolio | Muhammad Balaj Javed',
   description: "Explore the portfolio of a passionate Web Developer and Software Engineering student, showcasing projects in React, Node.js, Firebase, and more.",
-  generator: 'v0.dev',
+  keywords: [
+    'Portfolio',
+    'Web Developer',
+    'Software Engineering',
+    'React',
+    'Node.js',
+    'Firebase',
+    'JavaScript',
+    'TypeScript',
+    'Next.js',
+  ],
 }
 
 export default function RootLayout({
