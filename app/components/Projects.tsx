@@ -27,7 +27,7 @@ export default function Projects() {
         "A web application that uses AI to generate UML diagrams from natural language descriptions. It supports various diagram types and allows users to edit and export diagrams in multiple formats.",
       image: "/UML.png",
       technologies: ["Next.js", "Node.js", "Material UI", "Gemini API"],
-      githubUrl: "https://github.com/yourusername/ecommerce-platform",
+      githubUrl: "",
       liveUrl: "https://smartuml.online",
       featured: true,
     },
@@ -35,14 +35,35 @@ export default function Projects() {
       title: "Alfa Solutions Business Website",
       description: "Professional business website for Alfa Solutions",
       longDescription:
-        "A sleek and modern business website designed for Alfa Solutions, showcasing their services, portfolio, and contact information. Built with responsive design principles to ensure a great user experience on all devices.",
+        "A sleek and modern business website designed for Alfa Solutions, showcasing their services, portfolio, and contact information. Built with responsive design principles.",
       image: "/alfa-sol.png",
-      technologies: ["Next.js", "Material UI", "Firebase",],
+      technologies: ["Next.js", "Material UI", "Firebase"],
       githubUrl: "https://github.com/Balaj27/alfa-sol",
       liveUrl: "https://alfa-sol.vercel.app",
       featured: true,
     },
-    
+    {
+      title: "Smart Chef",
+      description: "AI-powered recipe generator and meal planner",
+      longDescription:
+        "An AI-driven mobile application that generates recipes based on user preferences and dietary restrictions. It includes meal planning features and a shopping list generator.",
+      image: "",
+      technologies: ["Kotlin", "Firebase", "Gemini API"],
+      githubUrl: "https://github.com/Balaj27/Smart-Chef",
+      liveUrl: "",
+      featured: false,
+    },
+    {
+      title: "Job Portal (CodSoft Internship)",
+      description: "Job portal for CodSoft internship program",
+      longDescription:
+        "A job portal developed for the CodSoft internship program, allowing users to browse and apply for internships. It features user authentication, job listings, and application management.",
+      image: "",
+      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Material UI"],
+      githubUrl: "https://github.com/Balaj27/CODSOFT-Task2",
+      liveUrl: "",
+      featured: false,
+    },
   ]
 
   const featuredProjects = projects.filter((p) => p.featured)
@@ -80,34 +101,39 @@ export default function Projects() {
                     ))}
                   </div>
                   <div className="flex gap-4">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <Github size={16} />
-                      Code
-                    </a>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <ExternalLink size={16} />
-                      Live Demo
-                    </a>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <Github size={16} />
+                        Code
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <ExternalLink size={16} />
+                        Live Demo
+                      </a>
+                    )}
                   </div>
+
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Other Projects 
+        {/* Other Projects */}
         <div className="max-w-4xl mx-auto">
           <h3 className="text-2xl font-semibold mb-8 text-center">Other Projects</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -123,30 +149,37 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors text-sm"
-                  >
-                    <Github size={14} />
-                    Code
-                  </a>
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors text-sm"
-                  >
-                    <ExternalLink size={14} />
-                    Demo
-                  </a>
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Github size={16} />
+                      Code
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <ExternalLink size={16} />
+                      Live Demo
+                    </a>
+                  )}
                 </div>
+
               </div>
             ))}
           </div>
         </div>
-*/}
+
         {/* Project Modal */}
         {selectedProject && (
           <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
