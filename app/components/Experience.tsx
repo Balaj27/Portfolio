@@ -18,6 +18,30 @@ export default function Experience() {
   // Replace with your actual experience data
   const experiences: ExperienceItem[] = [
     {
+      title: "Web Developer",
+      company: "Watch How",
+      location: "Remote — Malaysia",
+      duration: "August 2026 - Present",
+      description: [
+      "Develop and maintain full-stack web applications and responsive websites using React.js, Next.js, and the MERN stack",
+      "Build modern, scalable frontend interfaces and integrate backend APIs, databases, and third-party services",
+      "Deploy and manage web applications using platforms and services such as Vercel and Cloudflare",
+      "Develop and customize WordPress websites while implementing custom frontend functionality when required",
+      "Collaborate remotely with an international team to develop features, resolve technical issues, and optimize website performance",
+      ],
+      technologies: [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Vercel",
+      "Cloudflare",
+      "WordPress"
+      ],
+      },
+
+    {
       title: "Web Developer Intern",
       company: "Maida.co",
       location: "Rawalpindi, Pakistan",

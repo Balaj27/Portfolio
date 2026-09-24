@@ -21,6 +21,51 @@ export default function Projects() {
   // Replace with your actual projects
   const projects: Project[] = [
     {
+      title: "Riksons Engineering Website",
+      description: "Modern business website for an architecture, engineering, and construction company",
+      longDescription:
+      "A modern, responsive business website developed for Riksons Engineering to showcase their architecture, engineering, construction, and interior design services, along with their completed projects and company information.",
+      image: "/riksons.png",
+      technologies: ["Next.js", "React.js", "Material UI", "Nodemailer"],
+      githubUrl: "",
+      liveUrl: "https://www.riksons.co.uk",
+      featured: true,
+      },
+      {
+      title: "Artifex Labs Website",
+      description: "Modern website for Artifex Labs",
+      longDescription:
+      "A modern and responsive website developed for Artifex Labs with a clean interface, engaging layouts, and a professional digital presence optimized for different screen sizes.",
+      image: "/artifex-labs.png",
+      technologies: ["Next.js", "React.js", "Material UI"],
+      githubUrl: "",
+      liveUrl: "https://artifex-labs.vercel.app/",
+      featured: true,
+      },
+      {
+      title: "Mahria Constructions Website",
+      description: "Professional website for a construction company",
+      longDescription:
+      "A modern construction company website designed to showcase Mahria Constructions' services, completed projects, architecture and construction work, while providing potential clients with an easy way to explore the company and get in touch.",
+      image: "/mahria.png",
+      technologies: ["Next.js", "React.js", "Tailwind CSS", "Nodemailer"],
+      githubUrl: "",
+      liveUrl: "https://mahriaconstructions.com",
+      featured: true,
+      },
+      {
+      title: "TM Builders Website",
+      description: "Modern website for a construction and building company",
+      longDescription:
+      "A responsive business website developed for TM Builders to present their construction services, projects, and company information through a modern and professional online presence.",
+      image: "/tm.png",
+      technologies: ["Next.js", "React.js", "Tailwind CSS"],
+      githubUrl: "",
+      liveUrl: "https://tmbuilderss.com",
+      featured: true,
+      },
+
+    {
       title: "SmartUML",
       description: "AI-powered UML diagram generation tool",
       longDescription:
@@ -29,7 +74,7 @@ export default function Projects() {
       technologies: ["Next.js", "Node.js", "Material UI", "Gemini API"],
       githubUrl: "",
       liveUrl: "https://smartuml.online",
-      featured: true,
+      featured: false,
     },
     {
       title: "Alfa Solutions Business Website",
@@ -40,7 +85,7 @@ export default function Projects() {
       technologies: ["Next.js", "Material UI", "Firebase"],
       githubUrl: "https://github.com/Balaj27/alfa-sol",
       liveUrl: "https://alfa-sol.vercel.app",
-      featured: true,
+      featured: false,
     },
     {
       title: "Smart Chef",

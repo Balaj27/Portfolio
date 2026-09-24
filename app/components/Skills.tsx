@@ -1,97 +1,111 @@
-"use client"
+import { ArrowUpRight, Code2, Cloud, Database, Wrench } from "lucide-react"
+import type { ReactNode } from "react"
 
-import type React from "react"
-
-import { Code, Database, Cloud, Wrench } from "lucide-react"
-
-interface SkillCategory {
+interface SkillGroup {
+  number: string
   title: string
-  icon: React.ReactNode
-  skills: { name: string; level: number }[]
+  description: string
+  icon: ReactNode
+  skills: string[]
 }
 
+const skillGroups: SkillGroup[] = [
+  {
+    number: "01",
+    title: "Interface engineering",
+    description: "Responsive, accessible interfaces with a focus on clarity, motion, and detail.",
+    icon: <Code2 size={22} strokeWidth={1.7} />,
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Material UI"],
+  },
+  {
+    number: "02",
+    title: "Product foundations",
+    description: "The APIs, services, and data models that make digital products dependable.",
+    icon: <Database size={22} strokeWidth={1.7} />,
+    skills: ["Node.js", "Express.js", "Python", "PostgreSQL", "MongoDB", "Firebase"],
+  },
+  {
+    number: "03",
+    title: "Shipping & infrastructure",
+    description: "Practical deployment workflows that keep projects ready for their next release.",
+    icon: <Cloud size={22} strokeWidth={1.7} />,
+    skills: ["AWS", "Docker", "Vercel", "Cloudflare", "CI/CD", "Kubernetes"],
+  },
+  {
+    number: "04",
+    title: "Ways of working",
+    description: "A thoughtful toolkit for collaborating, testing ideas, and improving the outcome.",
+    icon: <Wrench size={22} strokeWidth={1.7} />,
+    skills: ["Git", "Linux", "Figma", "Jest", "REST APIs", "Agile/Scrum"],
+  },
+]
+
+const featuredTools = ["React", "Next.js", "Node.js", "TypeScript", "MongoDB", "AWS"]
+
 export default function Skills() {
-  const skillCategories: SkillCategory[] = [
-    {
-      title: "Frontend Development",
-      icon: <Code className="text-blue-400" size={24} />,
-      skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 85 },
-        { name: "Material UI", level: 90 },
-        { name: "Tailwind CSS", level: 90 },
-        { name: "JavaScript", level: 95 },
-      ],
-    },
-    {
-      title: "Backend Development",
-      icon: <Database className="text-green-400" size={24} />,
-      skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 85 },
-        { name: "Firebase", level: 90 },
-      ],
-    },
-    {
-      title: "Cloud & DevOps",
-      icon: <Cloud className="text-purple-400" size={24} />,
-      skills: [
-        { name: "AWS", level: 85 },
-        { name: "Docker", level: 80 },
-        { name: "Kubernetes", level: 70 },
-        { name: "CI/CD", level: 85 },
-        { name: "Terraform", level: 65 },
-      ],
-    },
-    {
-      title: "Tools & Others",
-      icon: <Wrench className="text-orange-400" size={24} />,
-      skills: [
-        { name: "Git", level: 95 },
-        { name: "Linux", level: 80 },
-        { name: "Figma", level: 70 },
-        { name: "Jest/Testing", level: 85 },
-        { name: "Agile/Scrum", level: 90 },
-      ],
-    },
-  ]
-
   return (
-    <section id="skills" className="py-20 bg-gray-800/50">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          Technical{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Skills</span>
-        </h2>
+    <section id="skills" className="relative overflow-hidden border-y border-gray-800 bg-gray-900 py-24 md:py-32">
+      <div className="absolute left-0 top-0 h-px w-1/3 bg-gradient-to-r from-blue-500 to-transparent" />
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => (
-            <div key={index} className="bg-gray-700 rounded-lg p-6 hover:bg-gray-600 transition-colors duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                {category.icon}
-                <h3 className="text-xl font-semibold">{category.title}</h3>
-              </div>
+      <div className="container relative mx-auto px-6">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+            <div className="lg:sticky lg:top-24 lg:self-start">
+              <p className="mb-5 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.24em] text-blue-400">
+                <span className="h-px w-8 bg-blue-400" />
+                What I use
+              </p>
+              <h2 className="max-w-md text-4xl font-bold leading-tight text-white md:text-5xl">
+                A practical stack for building <span className="text-blue-400">useful things.</span>
+              </h2>
+              <p className="mt-6 max-w-md text-base leading-7 text-gray-400">
+                From the first screen to the final deployment, I choose tools that keep the experience simple for the
+                people using it and maintainable for the people working on it.
+              </p>
 
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-300">{skill.name}</span>
-                      <span className="text-blue-400 font-semibold">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-600 rounded-full h-2">
-                      <div
-                        className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+              <div className="mt-10 border-l border-blue-500/50 pl-5">
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-gray-500">Most used</p>
+                <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+                  {featuredTools.map((tool) => (
+                    <span key={tool} className="text-sm text-gray-200">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          ))}
+
+            <div className="border-t border-gray-700">
+              {skillGroups.map((group) => (
+                <article
+                  key={group.number}
+                  className="group grid gap-5 border-b border-gray-700 py-8 transition-colors duration-300 hover:border-blue-400/70 md:grid-cols-[60px_1fr] md:gap-7"
+                >
+                  <div className="flex items-start justify-between md:block">
+                    <span className="font-mono text-sm text-gray-500">{group.number}</span>
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 text-blue-400 transition-colors duration-300 group-hover:border-blue-400 group-hover:bg-blue-400 group-hover:text-gray-950 md:mt-6">
+                      {group.icon}
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-start justify-between gap-4">
+                      <h3 className="text-2xl font-semibold text-white">{group.title}</h3>
+                      <ArrowUpRight className="mt-1 shrink-0 text-gray-600 transition-colors duration-300 group-hover:text-blue-400" size={20} />
+                    </div>
+                    <p className="mt-2 max-w-xl text-sm leading-6 text-gray-400">{group.description}</p>
+                    <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                      {group.skills.map((skill) => (
+                        <span key={skill} className="text-sm text-gray-300 before:mr-2 before:text-blue-400 before:content-['/']">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
